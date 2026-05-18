@@ -13,7 +13,7 @@ export const SITE = {
   instagram: "https://instagram.com/accessories_madhuban",
   googleReviews: "https://g.page/r/madhuban-motors",
   hours: "Mon–Sat: 10AM – 8PM | Closed Tuesday",
-  serviceAreas: ["Ghaziabad", "Noida", "Delhi", "Gurgaon", "Faridabad"],
+  serviceAreas: ["Ghaziabad", "Delhi", "Noida", "Gurgaon", "Faridabad", "Greater Noida"],
 };
 
 export const STATS = [

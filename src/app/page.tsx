@@ -8,6 +8,7 @@ import { HowItWorks } from "@/components/sections/HowItWorks";
 import { About } from "@/components/sections/About";
 import { Gallery } from "@/components/sections/Gallery";
 import { Testimonials } from "@/components/sections/Testimonials";
+import { Reviews } from "@/components/sections/Reviews";
 import { BookingForm } from "@/components/sections/BookingForm";
 import { Location } from "@/components/sections/Location";
 
@@ -23,6 +24,7 @@ export default function Home() {
         <About />
         <Gallery />
         <Testimonials />
+        <Reviews />
         <BookingForm />
         <Location />
       </main>
