@@ -1,23 +1,20 @@
 "use client";
 import Link from "next/link";
 
-interface LogoProps {
-  dark?: boolean;
-}
-
-export function Logo({ dark = false }: LogoProps) {
-  const nameColor = dark ? "#0A0A0A" : "#FFFFFF";
+export function Logo({ dark = false }: { dark?: boolean }) {
+  const color = dark ? "#0A0A0A" : "#FFFFFF";
 
   return (
-    <Link href="/" className="flex flex-col leading-none select-none group">
+    <Link href="/" className="flex flex-col leading-none select-none">
+      {/* MADHUBAN — with trademarked mirrored B */}
       <div
-        className="flex items-baseline font-bold"
+        className="flex items-baseline font-black"
         style={{
           fontFamily: "var(--font-syne)",
-          color: nameColor,
+          color,
+          fontSize: "1.45rem",
           letterSpacing: "-0.03em",
-          fontSize: "1.85rem",
-          lineHeight: 1,
+          lineHeight: 1.05,
           transition: "color 0.3s",
         }}
       >
@@ -25,16 +22,31 @@ export function Logo({ dark = false }: LogoProps) {
         <span style={{ display: "inline-block", transform: "scaleX(-1)" }}>B</span>
         <span>AN</span>
       </div>
-      <span
-        className="font-bold tracking-[0.4em] uppercase"
+      {/* MOTORS — same weight, tight below */}
+      <div
+        className="font-black"
         style={{
-          fontSize: "0.62rem",
-          letterSpacing: "0.45em",
-          color: "#E31837",
-          marginTop: "4px",
+          fontFamily: "var(--font-syne)",
+          color,
+          fontSize: "1.45rem",
+          letterSpacing: "-0.03em",
+          lineHeight: 1,
+          transition: "color 0.3s",
         }}
       >
-        MOTORS · EST. 1989
+        MOTORS
+      </div>
+      {/* EST. 1989 */}
+      <span
+        className="font-semibold uppercase"
+        style={{
+          color: "#E31837",
+          fontSize: "0.5rem",
+          letterSpacing: "0.5em",
+          marginTop: "5px",
+        }}
+      >
+        EST. 1989
       </span>
     </Link>
   );

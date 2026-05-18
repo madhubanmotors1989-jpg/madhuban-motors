@@ -17,15 +17,20 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0A0A0A]">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-20">
+    <footer className="bg-[#0A0A0A] border-t border-white/06">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-20 pt-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="mb-6">
-              <span className="text-2xl font-bold tracking-tight text-white" style={{ fontFamily: "var(--font-syne)" }}>MADHUBAN</span>
-              <div className="text-[10px] tracking-[0.3em] text-[#E31837] uppercase mt-1">Motors · Est. {SITE.estYear}</div>
+            <div className="mb-6 flex flex-col">
+              <div className="flex items-baseline font-black" style={{ fontFamily: "var(--font-syne)", color: "#fff", fontSize: "1.45rem", letterSpacing: "-0.03em", lineHeight: 1.05 }}>
+                <span>MADHU</span>
+                <span style={{ display: "inline-block", transform: "scaleX(-1)" }}>B</span>
+                <span>AN</span>
+              </div>
+              <div className="font-black" style={{ fontFamily: "var(--font-syne)", color: "#fff", fontSize: "1.45rem", letterSpacing: "-0.03em", lineHeight: 1 }}>MOTORS</div>
+              <span style={{ color: "#E31837", fontSize: "0.5rem", letterSpacing: "0.5em", marginTop: "5px" }}>EST. {SITE.estYear}</span>
             </div>
             <p className="text-white/30 text-sm leading-relaxed mb-8">
               Delhi NCR's most trusted car accessories and customization workshop. Three generations of passion.

@@ -7,7 +7,7 @@ export function Location() {
   const waLink = `https://wa.me/${SITE.whatsapp.replace(/\D/g, "")}?text=Hi%20Madhuban%20Motors!%20I'd%20like%20directions%20and%20to%20book%20a%20visit.`;
 
   return (
-    <section id="contact" className="py-20 md:py-28 bg-[#F7F7F7]">
+    <section id="contact" className="py-24 md:py-36 bg-[#F7F7F7]">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <FadeUp className="mb-16">
           <div className="flex items-center gap-3 mb-6">

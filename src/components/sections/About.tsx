@@ -1,124 +1,164 @@
 "use client";
-import { motion, useInView } from "motion/react";
-import { useRef } from "react";
+import { motion } from "motion/react";
 import { FadeUp } from "@/components/ui/FadeUp";
-import { CountUp } from "@/components/ui/CountUp";
 
-const milestones = [
-  { year: "1989", event: "Founded in Ghaziabad by Lala Shyam Sunder ji" },
-  { year: "2000", event: "Expanded to full car audio & infotainment installations" },
-  { year: "2010", event: "First shop in Delhi NCR to offer digital GPS tracking" },
-  { year: "2018", event: "Introduced ceramic nano-coating for premium protection" },
-  { year: "2024", event: "Serving 3 lakh+ cars across Delhi NCR" },
+const generations = [
+  {
+    num: "01",
+    name: "Shri Jagdish Chandra Paruthi",
+    role: "Founder",
+    years: "1989",
+    story:
+      "Started Madhuban Motors from a small shop in New Gandhi Nagar, Ghaziabad. Built the foundation on one principle — honest service, genuine products, every single time.",
+  },
+  {
+    num: "02",
+    name: "Vivek Paruthi",
+    aka: "Bittu Bhaiya",
+    role: "Second Generation",
+    years: "2000 – Present",
+    story:
+      "Expanded from seat covers to a full-service car customisation centre. The name every Ghaziabad driver knows. A face that means trust, quality, and zero compromise.",
+  },
+  {
+    num: "03",
+    name: "???",
+    role: "Third Generation",
+    years: "Watch this space",
+    story: "The next chapter is already being written. Some things are better kept a mystery. 👀",
+    quirky: true,
+  },
+];
+
+const photos = [
+  { label: "Shri Jagdish Chandra Paruthi Ji", sub: "Founder · 1989", tall: true },
+  { label: "Bittu Bhaiya", sub: "Vivek Paruthi · Second Generation", tall: false },
 ];
 
 export function About() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
-
   return (
-    <section id="about" className="py-20 md:py-28 bg-white">
+    <section id="about" className="py-24 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-          {/* Left */}
+          {/* Left — text */}
           <div>
             <FadeUp>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-px bg-[#E31837]" />
-                <span className="text-[#E31837] text-sm font-medium tracking-[0.2em] uppercase">Our Legacy</span>
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-8 h-px bg-[#E31837]" />
+                <span className="text-[#E31837] text-xs font-semibold tracking-[0.3em] uppercase">Our Legacy</span>
               </div>
-              <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-[#0A0A0A] mb-8" style={{ fontFamily: "var(--font-syne)" }}>
-                35 Years.
+              <h2
+                className="text-5xl md:text-6xl font-black tracking-tight text-[#0A0A0A] mb-6"
+                style={{ fontFamily: "var(--font-syne)", letterSpacing: "-0.03em" }}
+              >
+                Three Generations.
                 <br />
-                <span className="text-gradient">Three Generations.</span>
+                <span className="text-gradient">One Standard.</span>
               </h2>
-              <p className="text-[#555555] leading-relaxed mb-5 text-base">
-                Since 1989, Madhuban Motors has been the go-to destination for car owners across Delhi NCR who refuse to settle for ordinary. What started as a small seat cover shop has grown into a full-service car transformation centre.
-              </p>
-              <p className="text-[#888888] leading-relaxed mb-12 text-base">
-                Three generations of the same family. The same obsession with quality. The same promise — your car leaves looking better than when it arrived.
+              <p className="text-[#888] text-base leading-relaxed mb-14">
+                35 years in Ghaziabad. 3 lakh+ cars served. The same family, the same obsession — your car leaves better than it arrived.
               </p>
             </FadeUp>
 
-            {/* Mini stats */}
-            <FadeUp delay={0.2}>
-              <div className="grid grid-cols-3 gap-8 mb-14 pb-14 border-b border-black/08">
-                {[
-                  { value: 35, suffix: "+", label: "Years" },
-                  { value: 3, suffix: "L+", label: "Cars Served" },
-                  { value: 500, suffix: "+", label: "Reviews" },
-                ].map((s) => (
-                  <div key={s.label} className="flex flex-col gap-2">
-                    <span className="text-4xl font-bold text-[#0A0A0A]" style={{ fontFamily: "var(--font-syne)" }}>
-                      <CountUp value={s.value} suffix={s.suffix} />
-                    </span>
-                    <span className="text-[#888888] text-xs uppercase tracking-wide">{s.label}</span>
-                  </div>
-                ))}
-              </div>
-            </FadeUp>
-
-            {/* Timeline */}
-            <FadeUp delay={0.3}>
-              <div ref={ref} className="flex flex-col gap-0">
-                {milestones.map((m, i) => (
-                  <motion.div
-                    key={m.year}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                    transition={{ delay: 0.4 + i * 0.1 }}
-                    className="flex gap-5 pb-7 last:pb-0 relative"
-                  >
-                    {i < milestones.length - 1 && (
-                      <div className="absolute left-[22px] top-7 bottom-0 w-px bg-black/06" />
-                    )}
-                    <div className="w-11 h-7 flex-shrink-0 flex items-center justify-center">
-                      <div className="w-2 h-2 rounded-full bg-[#E31837]" />
-                    </div>
-                    <div>
-                      <span className="text-[#E31837] text-xs font-bold tracking-wider">{m.year}</span>
-                      <p className="text-[#555555] text-sm mt-0.5">{m.event}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </FadeUp>
-          </div>
-
-          {/* Right: photo grid */}
-          <FadeUp delay={0.2}>
-            <div className="grid grid-cols-2 gap-3">
-              {[
-                { label: "The Workshop", aspect: "aspect-[4/3]", accent: true },
-                { label: "Installation Bay", aspect: "aspect-square", accent: false },
-                { label: "Seat Cover Fitting", aspect: "aspect-square", accent: false },
-                { label: "Ceramic Coating", aspect: "aspect-[4/3]", accent: true },
-              ].map((item) => (
+            {/* Generation cards */}
+            <div className="flex flex-col gap-4">
+              {generations.map((gen, i) => (
                 <motion.div
-                  key={item.label}
-                  whileHover={{ scale: 1.015 }}
-                  transition={{ duration: 0.25 }}
-                  className={`${item.aspect} rounded-2xl overflow-hidden relative group`}
-                  style={{ background: item.accent ? "linear-gradient(135deg, #1a0408 0%, #0f0f0f 100%)" : "#111111" }}
+                  key={gen.num}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.12 }}
+                  className={`rounded-2xl p-6 border transition-all ${
+                    gen.quirky
+                      ? "border-dashed border-black/15 bg-[#F9F9F9]"
+                      : "border-black/08 bg-white hover:border-[#E31837]/20 hover:shadow-md"
+                  }`}
                 >
-                  {/* Red corner accent */}
-                  <div className="absolute top-0 left-0 w-12 h-0.5 bg-[#E31837]" />
-                  <div className="absolute top-0 left-0 w-0.5 h-12 bg-[#E31837]" />
-                  {/* Label */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
-                    <span className="text-white/70 text-xs font-medium tracking-wide uppercase">{item.label}</span>
-                  </div>
-                  {/* Subtle grid pattern */}
-                  <div className="absolute inset-0 opacity-5" style={{
-                    backgroundImage: "linear-gradient(rgba(227,24,55,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(227,24,55,0.5) 1px, transparent 1px)",
-                    backgroundSize: "24px 24px"
-                  }} />
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <span className="text-white/30 text-xs">Photo coming soon</span>
+                  <div className="flex items-start gap-4">
+                    <span
+                      className="font-black text-3xl leading-none flex-shrink-0"
+                      style={{
+                        fontFamily: "var(--font-syne)",
+                        color: gen.quirky ? "#CCCCCC" : "#E31837",
+                        opacity: gen.quirky ? 0.4 : 1,
+                      }}
+                    >
+                      {gen.num}
+                    </span>
+                    <div className="flex-1">
+                      <div className="flex flex-wrap items-center gap-2 mb-1">
+                        <h3 className={`font-bold text-base ${gen.quirky ? "text-[#AAAAAA]" : "text-[#0A0A0A]"}`}>
+                          {gen.name}
+                          {(gen as any).aka && (
+                            <span className="ml-2 text-[#E31837] font-normal text-sm">· {(gen as any).aka}</span>
+                          )}
+                        </h3>
+                      </div>
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className={`text-xs font-semibold tracking-wide uppercase ${gen.quirky ? "text-[#CCCCCC]" : "text-[#E31837]"}`}>
+                          {gen.role}
+                        </span>
+                        <span className="text-black/15">·</span>
+                        <span className="text-[#AAAAAA] text-xs">{gen.years}</span>
+                      </div>
+                      <p className={`text-sm leading-relaxed ${gen.quirky ? "text-[#BBBBBB] italic" : "text-[#666]"}`}>
+                        {gen.story}
+                      </p>
+                    </div>
                   </div>
                 </motion.div>
               ))}
+            </div>
+          </div>
+
+          {/* Right — founder photos */}
+          <FadeUp delay={0.2}>
+            <div className="flex flex-col gap-4 h-full">
+              {/* Main photo — Jagdish Chandra Ji */}
+              <motion.div
+                whileHover={{ scale: 1.01 }}
+                transition={{ duration: 0.3 }}
+                className="relative rounded-2xl overflow-hidden flex-1 min-h-[260px]"
+                style={{ background: "linear-gradient(145deg, #1a0408 0%, #0f0f0f 100%)" }}
+              >
+                <div className="absolute top-0 left-0 w-16 h-0.5 bg-[#E31837]" />
+                <div className="absolute top-0 left-0 w-0.5 h-16 bg-[#E31837]" />
+                <div className="absolute inset-0 opacity-[0.04]" style={{
+                  backgroundImage: "linear-gradient(rgba(227,24,55,1) 1px, transparent 1px), linear-gradient(90deg, rgba(227,24,55,1) 1px, transparent 1px)",
+                  backgroundSize: "28px 28px",
+                }} />
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                  <p className="text-white font-semibold text-sm">{photos[0].label}</p>
+                  <p className="text-[#E31837] text-xs mt-0.5">{photos[0].sub}</p>
+                </div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white/10 text-xs text-center">
+                  Photo coming soon
+                </div>
+              </motion.div>
+
+              {/* Bittu Bhaiya */}
+              <motion.div
+                whileHover={{ scale: 1.01 }}
+                transition={{ duration: 0.3 }}
+                className="relative rounded-2xl overflow-hidden min-h-[200px]"
+                style={{ background: "#111111" }}
+              >
+                <div className="absolute top-0 right-0 w-16 h-0.5 bg-[#E31837]" />
+                <div className="absolute top-0 right-0 w-0.5 h-16 bg-[#E31837]" />
+                <div className="absolute inset-0 opacity-[0.04]" style={{
+                  backgroundImage: "linear-gradient(rgba(227,24,55,1) 1px, transparent 1px), linear-gradient(90deg, rgba(227,24,55,1) 1px, transparent 1px)",
+                  backgroundSize: "28px 28px",
+                }} />
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                  <p className="text-white font-semibold text-sm">{photos[1].label}</p>
+                  <p className="text-[#E31837] text-xs mt-0.5">{photos[1].sub}</p>
+                </div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white/10 text-xs text-center">
+                  Photo coming soon
+                </div>
+              </motion.div>
             </div>
           </FadeUp>
 
