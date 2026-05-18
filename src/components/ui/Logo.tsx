@@ -15,8 +15,8 @@ export function Logo({ dark = false }: LogoProps) {
         style={{
           fontFamily: "var(--font-syne)",
           color: nameColor,
-          letterSpacing: "-0.025em",
-          fontSize: "1.6rem",
+          letterSpacing: "-0.03em",
+          fontSize: "1.85rem",
           lineHeight: 1,
           transition: "color 0.3s",
         }}
@@ -28,10 +28,10 @@ export function Logo({ dark = false }: LogoProps) {
       <span
         className="font-bold tracking-[0.4em] uppercase"
         style={{
-          fontSize: "0.6rem",
-          letterSpacing: "0.4em",
+          fontSize: "0.62rem",
+          letterSpacing: "0.45em",
           color: "#E31837",
-          marginTop: "3px",
+          marginTop: "4px",
         }}
       >
         MOTORS · EST. 1989

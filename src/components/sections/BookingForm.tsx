@@ -171,15 +171,15 @@ export function BookingForm() {
                       />
                     </div>
 
-                    {/* Services — checkboxes */}
+                    {/* Services — pill chips */}
                     <div>
                       <label className="text-[#0A0A0A] text-sm font-medium mb-3 block">
-                        {lang === "hi" ? "कौन सी सेवा चाहिए?" : "Services Needed"}{" "}
-                        <span className="text-[#AAAAAA] font-normal">
-                          ({lang === "hi" ? "जितनी चाहें चुनें" : "select all that apply"})
+                        {lang === "hi" ? "कौन सी सेवा चाहिए?" : "Services Needed"}
+                        <span className="text-[#AAAAAA] font-normal text-xs ml-1">
+                          ({lang === "hi" ? "जितनी चाहें" : "tap all that apply"})
                         </span>
                       </label>
-                      <div className="grid grid-cols-2 gap-2">
+                      <div className="flex flex-wrap gap-2">
                         {SERVICES.map((s) => {
                           const selected = form.services.includes(s.id);
                           return (
@@ -188,28 +188,27 @@ export function BookingForm() {
                               type="button"
                               onClick={() => { toggleService(s.id); update("notSure", false); }}
                               className={cn(
-                                "text-left p-3.5 rounded-2xl border text-sm transition-all",
+                                "px-3.5 py-2 rounded-full border text-xs font-medium transition-all whitespace-nowrap",
                                 selected
-                                  ? "border-[#E31837] bg-[#E31837]/06 text-[#0A0A0A] font-medium"
-                                  : "border-black/08 text-[#666666] hover:border-black/15 bg-white"
+                                  ? "border-[#E31837] bg-[#E31837] text-white"
+                                  : "border-black/12 text-[#555] hover:border-[#E31837]/40 hover:text-[#E31837] bg-white"
                               )}
                             >
                               {s.title}
                             </button>
                           );
                         })}
-                        {/* Not Sure */}
                         <button
                           type="button"
                           onClick={() => { update("notSure", !form.notSure); update("services", []); }}
                           className={cn(
-                            "col-span-2 text-center p-3.5 rounded-2xl border text-sm transition-all italic",
+                            "px-3.5 py-2 rounded-full border text-xs font-medium transition-all italic",
                             form.notSure
-                              ? "border-[#E31837] bg-[#E31837]/06 text-[#0A0A0A]"
-                              : "border-dashed border-black/10 text-[#AAAAAA] hover:border-black/20 bg-white"
+                              ? "border-[#E31837] bg-[#E31837] text-white"
+                              : "border-dashed border-black/15 text-[#AAAAAA] hover:border-[#E31837]/40 bg-white"
                           )}
                         >
-                          Not Sure Yet — बस पूछना है 🙂
+                          Not sure — बस पूछना है 🙂
                         </button>
                       </div>
                     </div>

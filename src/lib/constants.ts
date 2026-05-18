@@ -27,6 +27,7 @@ export const SERVICES = [
   {
     id: "seat-covers",
     title: "Seat Covers",
+    short: "Leather & fabric. Perfect fit.",
     description: "Premium leather & fabric seat covers tailored for your car. Heat-resistant, easy-clean, and built to last Delhi NCR summers.",
     icon: "Armchair",
     from: "₹2,999",
@@ -35,7 +36,8 @@ export const SERVICES = [
   },
   {
     id: "car-audio",
-    title: "Car Audio & Infotainment",
+    title: "Car Audio",
+    short: "Pioneer · Sony · Zero rattle.",
     description: "Pioneer, Sony & JVC head units with crisp Dolby sound. We install, tune, and calibrate — no rattle, no noise.",
     icon: "Speaker",
     from: "₹4,999",
@@ -45,6 +47,7 @@ export const SERVICES = [
   {
     id: "cameras-sensors",
     title: "Cameras & Sensors",
+    short: "360° view. Night-vision ready.",
     description: "360° surround cameras, dashcams & parking sensors. Full HD, night-vision ready — drive with total awareness.",
     icon: "Camera",
     from: "₹2,499",
@@ -54,6 +57,7 @@ export const SERVICES = [
   {
     id: "led-lighting",
     title: "LED Lighting",
+    short: "Ambient. DRL. Footwell kits.",
     description: "Interior ambience lighting, DRL strips, footwell kits — transform your cabin into an experience.",
     icon: "Lightbulb",
     from: "₹999",
@@ -63,6 +67,7 @@ export const SERVICES = [
   {
     id: "security",
     title: "Security Systems",
+    short: "Alarm. Immobilizer. Smart.",
     description: "Advanced alarm systems and immobilizers. Protect your vehicle with layers of intelligence.",
     icon: "ShieldCheck",
     from: "₹1,999",
@@ -72,6 +77,7 @@ export const SERVICES = [
   {
     id: "gps",
     title: "GPS Trackers",
+    short: "Real-time. Mobile alerts.",
     description: "Real-time vehicle tracking with mobile alerts. Know exactly where your car is — always.",
     icon: "MapPin",
     from: "₹1,499",
@@ -81,6 +87,7 @@ export const SERVICES = [
   {
     id: "ceramic",
     title: "Ceramic Coating",
+    short: "9H nano. Years of shine.",
     description: "9H nano-ceramic protection that repels water, dust & UV. Showroom shine that lasts years, not weeks.",
     icon: "Sparkles",
     from: "₹8,999",
@@ -88,8 +95,9 @@ export const SERVICES = [
     whatsappMsg: "Hi! I'm interested in ceramic coating.",
   },
   {
-    id: "repair",
+    id: "accessories",
     title: "General Accessories",
+    short: "Mats. Covers. Sunshades.",
     description: "Steering covers, floor mats, sunshades, organisers — everything to personalise your ride.",
     icon: "Wrench",
     from: "₹299",

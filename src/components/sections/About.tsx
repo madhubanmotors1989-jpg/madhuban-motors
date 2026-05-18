@@ -88,23 +88,34 @@ export function About() {
 
           {/* Right: photo grid */}
           <FadeUp delay={0.2}>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3">
               {[
-                { label: "The Workshop", aspect: "aspect-[4/3]" },
-                { label: "Installation Bay", aspect: "aspect-square" },
-                { label: "Seat Cover Fitting", aspect: "aspect-square" },
-                { label: "Ceramic Coating", aspect: "aspect-[4/3]" },
+                { label: "The Workshop", aspect: "aspect-[4/3]", accent: true },
+                { label: "Installation Bay", aspect: "aspect-square", accent: false },
+                { label: "Seat Cover Fitting", aspect: "aspect-square", accent: false },
+                { label: "Ceramic Coating", aspect: "aspect-[4/3]", accent: true },
               ].map((item) => (
                 <motion.div
                   key={item.label}
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
-                  className={`${item.aspect} rounded-3xl bg-[#F7F7F7] border border-black/06 flex items-end p-5 overflow-hidden relative group`}
+                  whileHover={{ scale: 1.015 }}
+                  transition={{ duration: 0.25 }}
+                  className={`${item.aspect} rounded-2xl overflow-hidden relative group`}
+                  style={{ background: item.accent ? "linear-gradient(135deg, #1a0408 0%, #0f0f0f 100%)" : "#111111" }}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#E31837]/05 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <span className="text-[#AAAAAA] text-xs relative z-10">{item.label}</span>
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#DDDDDD] text-xs text-center">
-                    📸 Add Photo
+                  {/* Red corner accent */}
+                  <div className="absolute top-0 left-0 w-12 h-0.5 bg-[#E31837]" />
+                  <div className="absolute top-0 left-0 w-0.5 h-12 bg-[#E31837]" />
+                  {/* Label */}
+                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
+                    <span className="text-white/70 text-xs font-medium tracking-wide uppercase">{item.label}</span>
+                  </div>
+                  {/* Subtle grid pattern */}
+                  <div className="absolute inset-0 opacity-5" style={{
+                    backgroundImage: "linear-gradient(rgba(227,24,55,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(227,24,55,0.5) 1px, transparent 1px)",
+                    backgroundSize: "24px 24px"
+                  }} />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="text-white/30 text-xs">Photo coming soon</span>
                   </div>
                 </motion.div>
               ))}

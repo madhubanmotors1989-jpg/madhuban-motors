@@ -2,7 +2,7 @@
 import { motion } from "motion/react";
 import { Armchair, Speaker, Camera, Lightbulb, ShieldCheck, MapPin, Sparkles, Wrench, MessageCircle } from "lucide-react";
 import { SERVICES, SITE } from "@/lib/constants";
-import { StaggerContainer, StaggerItem, FadeUp } from "@/components/ui/FadeUp";
+import { FadeUp } from "@/components/ui/FadeUp";
 import { useLang, tr } from "@/lib/lang";
 import { cn } from "@/lib/cn";
 
@@ -32,78 +32,85 @@ export function Services() {
               <br />
               <span className="text-gradient">{tx.svcH2}</span>
             </h2>
-            <p className="text-[#999] text-sm max-w-xs leading-relaxed">
-              {tx.svcDesc}<br />
-              <span className="text-[#BBB]">{tx.svcSub}</span>
-            </p>
+            <p className="text-[#AAA] text-sm">{tx.svcSub}</p>
           </div>
         </FadeUp>
 
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {SERVICES.map((service) => {
+        {/* Service grid — 2 cols mobile, 4 cols desktop */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+          {SERVICES.map((service, i) => {
             const Icon = iconMap[service.icon];
             const serviceWaLink = `https://wa.me/${SITE.whatsapp.replace(/\D/g, "")}?text=${encodeURIComponent(service.whatsappMsg)}`;
 
             return (
-              <StaggerItem key={service.id}>
-                <motion.div
-                  whileHover={{ y: -3 }}
-                  transition={{ duration: 0.2 }}
-                  className={cn(
-                    "group relative flex flex-col p-6 rounded-2xl border transition-all duration-300 h-full",
-                    "bg-white border-black/08 hover:border-[#E31837]/30 hover:shadow-lg hover:shadow-black/04",
-                    service.featured && "md:col-span-2 lg:col-span-2"
-                  )}
-                >
-                  <div className="absolute top-0 left-6 right-6 h-0.5 bg-[#E31837] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full" />
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ y: -3 }}
+                className={cn(
+                  "group relative flex flex-col p-5 md:p-6 rounded-2xl border transition-all duration-300",
+                  "bg-white border-black/08 hover:border-[#E31837]/30 hover:shadow-lg hover:shadow-black/05",
+                  service.featured && "lg:col-span-2"
+                )}
+              >
+                {/* Top red line on hover */}
+                <div className="absolute top-0 left-5 right-5 h-0.5 bg-[#E31837] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full" />
 
-                  {service.featured && (
-                    <span className="absolute top-4 right-4 text-[9px] font-bold tracking-widest uppercase text-[#E31837] border border-[#E31837]/25 px-2 py-0.5 rounded-full">
-                      {lang === "hi" ? "सबसे लोकप्रिय" : "Popular"}
-                    </span>
-                  )}
+                {service.featured && (
+                  <span className="absolute top-4 right-4 text-[9px] font-bold tracking-widest uppercase text-[#E31837] border border-[#E31837]/30 px-2 py-0.5 rounded-full">
+                    {lang === "hi" ? "लोकप्रिय" : "Popular"}
+                  </span>
+                )}
 
-                  <div className="w-10 h-10 rounded-xl bg-[#F7F7F7] border border-black/05 flex items-center justify-center mb-5 group-hover:bg-[#E31837]/08 group-hover:border-[#E31837]/15 transition-all flex-shrink-0">
-                    <Icon className="w-4.5 h-4.5 w-[18px] h-[18px] text-[#E31837]" />
-                  </div>
+                {/* Icon */}
+                <div className="w-10 h-10 rounded-xl bg-[#F5F5F5] flex items-center justify-center mb-4 group-hover:bg-[#E31837]/08 transition-colors flex-shrink-0">
+                  <Icon className="w-5 h-5 text-[#E31837]" />
+                </div>
 
-                  <h3 className="text-[#0A0A0A] font-semibold text-base mb-2">{service.title}</h3>
-                  <p className="text-[#999] text-xs leading-relaxed mb-5 flex-1 line-clamp-3">{service.description}</p>
+                {/* Title */}
+                <h3 className="text-[#0A0A0A] font-semibold text-sm md:text-base leading-tight mb-1.5 pr-8">
+                  {service.title}
+                </h3>
 
-                  <div className="flex items-center justify-between pt-4 border-t border-black/05">
-                    <span className="text-[#AAA] text-xs">
-                      {lang === "hi" ? "शुरुआत " : "From "}
-                      <span className="text-[#E31837] font-semibold">{service.from}</span>
-                    </span>
-                    <motion.a
-                      href={serviceWaLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="flex items-center gap-1 bg-[#E31837] hover:bg-[#FF3355] text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors"
-                    >
-                      <MessageCircle className="w-3 h-3" /> WhatsApp
-                    </motion.a>
-                  </div>
-                </motion.div>
-              </StaggerItem>
+                {/* Short tagline — single line, muted */}
+                <p className="text-[#AAA] text-xs leading-snug mb-4 flex-1">
+                  {service.short}
+                </p>
+
+                {/* Footer */}
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-[#CCC]">
+                    From <span className="text-[#E31837] font-semibold text-sm">{service.from}</span>
+                  </span>
+                  <a
+                    href={serviceWaLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 bg-[#E31837] hover:bg-[#FF3355] text-white text-[11px] font-semibold px-3 py-1.5 rounded-full transition-colors"
+                  >
+                    <MessageCircle className="w-3 h-3" />
+                    Ask
+                  </a>
+                </div>
+              </motion.div>
             );
           })}
-        </StaggerContainer>
+        </div>
 
-        <FadeUp delay={0.3} className="mt-10 text-center">
-          <motion.a
+        {/* Bottom CTA */}
+        <FadeUp delay={0.2} className="mt-10 text-center">
+          <a
             href={waLink}
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center gap-2 border border-black/10 hover:border-[#E31837]/30 text-[#555] hover:text-[#E31837] text-sm font-medium px-8 py-3.5 rounded-full transition-all"
+            className="inline-flex items-center gap-2 border border-black/10 hover:border-[#E31837]/40 text-[#555] hover:text-[#E31837] text-sm font-medium px-8 py-3.5 rounded-full transition-all"
           >
             <MessageCircle className="w-4 h-4" />
             {tx.svcCta}
-          </motion.a>
+          </a>
         </FadeUp>
       </div>
     </section>
