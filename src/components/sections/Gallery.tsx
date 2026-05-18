@@ -71,16 +71,23 @@ export function Gallery() {
             onMouseMove={handleSlider}
             onTouchMove={handleSlider}
           >
-            <div className="absolute inset-0 bg-[#111111] flex items-center justify-center">
+            {/* After panel */}
+            <div className="absolute inset-0 flex items-center justify-center" style={{ background: "#0f0f0f" }}>
               <div className="text-center">
-                <div className="text-3xl mb-3">✨</div>
-                <p className="text-white/20 text-sm">After — Add your photo here</p>
+                <div className="w-px h-16 bg-[#E31837]/30 mx-auto mb-4" />
+                <span className="text-[#E31837] text-xs font-bold tracking-[0.3em] uppercase">After</span>
+                <p className="text-white/15 text-xs mt-2">Add your photo</p>
               </div>
             </div>
-            <div className="absolute inset-0 bg-[#1A1A1A] flex items-center justify-center" style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}>
+            {/* Before panel */}
+            <div
+              className="absolute inset-0 flex items-center justify-center"
+              style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)`, background: "#1a1a1a" }}
+            >
               <div className="text-center">
-                <div className="text-3xl mb-3">📷</div>
-                <p className="text-white/20 text-sm">Before — Add your photo here</p>
+                <div className="w-px h-16 bg-white/15 mx-auto mb-4" />
+                <span className="text-white/40 text-xs font-bold tracking-[0.3em] uppercase">Before</span>
+                <p className="text-white/15 text-xs mt-2">Add your photo</p>
               </div>
             </div>
             <div className="absolute top-0 bottom-0 w-0.5 bg-white/60 z-10" style={{ left: `${sliderPos}%` }}>
@@ -116,7 +123,7 @@ export function Gallery() {
                 className="group aspect-square rounded-3xl bg-[#111111] border border-white/06 hover:border-[#E31837]/20 transition-all relative overflow-hidden flex items-end p-5 cursor-pointer"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-[#E31837]/05 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white/10 text-xs text-center pointer-events-none">📸 Add Photo</div>
+                {/* clean dark placeholder — no emoji */}
                 <div className="relative z-10">
                   <span className="text-[10px] font-medium uppercase tracking-wider text-[#E31837] bg-[#E31837]/10 px-2 py-0.5 rounded-full">{work.cat}</span>
                   <p className="text-white/50 text-xs mt-1.5">{work.label}</p>
