@@ -133,45 +133,45 @@ export function BookingForm() {
   const canSubmit = form.name && form.phone && form.car;
 
   return (
-    <section id="book" className="py-24 md:py-32 bg-[#0A0A0A]">
+    <section id="book" className="py-28 md:py-36 bg-[#0A1628]">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
 
-        {/* Language toggle — top center, prominent */}
+        {/* Language toggle */}
         <div className="flex justify-center mb-16">
           <motion.button
             onClick={toggle}
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center gap-2 border border-white/20 hover:border-[#E31837] text-white/60 hover:text-white text-sm font-semibold px-6 py-3 rounded-full transition-all duration-300"
+            className="inline-flex items-center gap-2 border border-white/20 hover:border-[#F05A22] text-white/60 hover:text-white text-sm font-semibold px-6 py-3 rounded-full transition-all duration-300"
           >
             <Globe className="w-4 h-4" />
             {tx.toggleBtn}
           </motion.button>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
           {/* Left */}
           <FadeUp>
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-8 h-px bg-[#E31837]" />
-              <span className="text-[#E31837] text-xs font-semibold tracking-[0.3em] uppercase">{tx.eyebrow}</span>
+              <div className="w-8 h-px bg-[#F05A22]" />
+              <span className="text-[#F05A22] text-xs font-semibold tracking-[0.3em] uppercase">{tx.eyebrow}</span>
             </div>
             <h2
               className="text-5xl md:text-6xl font-black tracking-tight text-white mb-6"
-              style={{ fontFamily: "var(--font-syne)", letterSpacing: "-0.03em" }}
+              style={{ fontFamily: "var(--font-syne)", letterSpacing: "-0.02em" }}
             >
               {tx.h1}
               <br />
               <span className="text-gradient">{tx.h2}</span>
             </h2>
-            <p className="text-white/40 text-base mb-12">{tx.sub}</p>
+            <p className="text-white/40 text-base mb-14 leading-relaxed">{tx.sub}</p>
 
-            <div className="flex flex-col gap-4 mb-12">
+            <div className="flex flex-col gap-5 mb-14">
               {tx.points.map((point) => (
                 <div key={point} className="flex items-start gap-3 text-white/50 text-sm">
-                  <div className="w-4 h-4 rounded-full border border-[#E31837]/40 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CheckCircle className="w-2.5 h-2.5 text-[#E31837]" />
+                  <div className="w-4 h-4 rounded-full border border-[#F05A22]/40 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <CheckCircle className="w-2.5 h-2.5 text-[#F05A22]" />
                   </div>
                   {point}
                 </div>
@@ -197,9 +197,9 @@ export function BookingForm() {
                   className="bg-white rounded-3xl p-12 flex flex-col items-center text-center gap-5"
                 >
                   <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", stiffness: 200, delay: 0.1 }}>
-                    <CheckCircle className="w-14 h-14 text-[#E31837]" />
+                    <CheckCircle className="w-14 h-14 text-[#F05A22]" />
                   </motion.div>
-                  <h3 className="text-[#0A0A0A] font-black text-2xl" style={{ fontFamily: "var(--font-syne)" }}>{tx.successTitle}</h3>
+                  <h3 className="text-[#0A1628] font-black text-2xl" style={{ fontFamily: "var(--font-syne)" }}>{tx.successTitle}</h3>
                   <p className="text-[#888] text-sm max-w-xs">{tx.successSub}</p>
                   <a href={waLink} target="_blank" rel="noopener noreferrer"
                     className="flex items-center gap-2 bg-[#22C55E] hover:bg-[#16A34A] text-white font-semibold px-8 py-4 rounded-full transition-colors mt-2"
@@ -209,15 +209,15 @@ export function BookingForm() {
                 </motion.div>
               ) : (
                 <motion.div key="form" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="bg-white rounded-3xl p-8 md:p-10">
-                  <div className="flex flex-col gap-5">
+                  <div className="flex flex-col gap-6">
 
                     <div>
-                      <label className="text-[#0A0A0A] text-sm font-semibold mb-2 block">{tx.brandLabel}</label>
+                      <label className="text-[#0A1628] text-sm font-semibold mb-2 block">{tx.brandLabel}</label>
                       <div className="relative">
                         <select
                           value={form.car}
                           onChange={(e) => update("car", e.target.value)}
-                          className="w-full bg-[#F7F7F7] border border-black/08 text-[#0A0A0A] rounded-xl px-5 py-4 text-sm appearance-none focus:outline-none focus:border-[#E31837]/50 transition-colors cursor-pointer"
+                          className="w-full bg-[#F7F7F7] border border-black/08 text-[#0A0A0A] rounded-xl px-5 py-4 text-sm appearance-none focus:outline-none focus:border-[#F05A22]/50 transition-colors cursor-pointer"
                         >
                           <option value="">{tx.brandPlaceholder}</option>
                           {CAR_BRANDS.map((b) => <option key={b} value={b}>{b}</option>)}
@@ -227,7 +227,7 @@ export function BookingForm() {
                     </div>
 
                     <div>
-                      <label className="text-[#0A0A0A] text-sm font-semibold mb-2 block">
+                      <label className="text-[#0A1628] text-sm font-semibold mb-2 block">
                         {tx.modelLabel} <span className="text-[#AAA] font-normal">({tx.modelOptional})</span>
                       </label>
                       <input
@@ -235,12 +235,12 @@ export function BookingForm() {
                         placeholder={tx.modelPlaceholder}
                         value={form.carModel}
                         onChange={(e) => update("carModel", e.target.value)}
-                        className="w-full bg-[#F7F7F7] border border-black/08 text-[#0A0A0A] rounded-xl px-5 py-4 text-sm placeholder:text-[#CCC] focus:outline-none focus:border-[#E31837]/50 transition-colors"
+                        className="w-full bg-[#F7F7F7] border border-black/08 text-[#0A0A0A] rounded-xl px-5 py-4 text-sm placeholder:text-[#CCC] focus:outline-none focus:border-[#F05A22]/50 transition-colors"
                       />
                     </div>
 
                     <div>
-                      <label className="text-[#0A0A0A] text-sm font-semibold mb-3 block">
+                      <label className="text-[#0A1628] text-sm font-semibold mb-3 block">
                         {tx.servicesLabel} <span className="text-[#AAA] font-normal">({tx.servicesHint})</span>
                       </label>
                       <div className="flex flex-wrap gap-2">
@@ -254,8 +254,8 @@ export function BookingForm() {
                               className={cn(
                                 "px-3.5 py-2 rounded-full border text-xs font-medium transition-all",
                                 selected
-                                  ? "border-[#E31837] bg-[#E31837] text-white"
-                                  : "border-black/10 text-[#555] hover:border-[#E31837]/40 hover:text-[#E31837] bg-white"
+                                  ? "border-[#F05A22] bg-[#F05A22] text-white"
+                                  : "border-black/10 text-[#555] hover:border-[#F05A22]/40 hover:text-[#F05A22] bg-white"
                               )}
                             >
                               {s.title}
@@ -268,8 +268,8 @@ export function BookingForm() {
                           className={cn(
                             "px-3.5 py-2 rounded-full border text-xs font-medium transition-all italic",
                             form.notSure
-                              ? "border-[#E31837] bg-[#E31837] text-white"
-                              : "border-dashed border-black/15 text-[#AAA] hover:border-[#E31837]/40 bg-white"
+                              ? "border-[#F05A22] bg-[#F05A22] text-white"
+                              : "border-dashed border-black/15 text-[#AAA] hover:border-[#F05A22]/40 bg-white"
                           )}
                         >
                           {tx.notSure}
@@ -280,21 +280,21 @@ export function BookingForm() {
                     <div className="border-t border-black/05 pt-1" />
 
                     <div>
-                      <label className="text-[#0A0A0A] text-sm font-semibold mb-2 block">{tx.nameLabel}</label>
+                      <label className="text-[#0A1628] text-sm font-semibold mb-2 block">{tx.nameLabel}</label>
                       <input type="text" placeholder={tx.namePlaceholder} value={form.name} onChange={(e) => update("name", e.target.value)}
-                        className="w-full bg-[#F7F7F7] border border-black/08 text-[#0A0A0A] rounded-xl px-5 py-4 text-sm placeholder:text-[#CCC] focus:outline-none focus:border-[#E31837]/50 transition-colors" />
+                        className="w-full bg-[#F7F7F7] border border-black/08 text-[#0A0A0A] rounded-xl px-5 py-4 text-sm placeholder:text-[#CCC] focus:outline-none focus:border-[#F05A22]/50 transition-colors" />
                     </div>
                     <div>
-                      <label className="text-[#0A0A0A] text-sm font-semibold mb-2 block">{tx.phoneLabel}</label>
+                      <label className="text-[#0A1628] text-sm font-semibold mb-2 block">{tx.phoneLabel}</label>
                       <input type="tel" placeholder={tx.phonePlaceholder} value={form.phone} onChange={(e) => update("phone", e.target.value)}
-                        className="w-full bg-[#F7F7F7] border border-black/08 text-[#0A0A0A] rounded-xl px-5 py-4 text-sm placeholder:text-[#CCC] focus:outline-none focus:border-[#E31837]/50 transition-colors" />
+                        className="w-full bg-[#F7F7F7] border border-black/08 text-[#0A0A0A] rounded-xl px-5 py-4 text-sm placeholder:text-[#CCC] focus:outline-none focus:border-[#F05A22]/50 transition-colors" />
                     </div>
                     <div>
-                      <label className="text-[#0A0A0A] text-sm font-semibold mb-2 block">
+                      <label className="text-[#0A1628] text-sm font-semibold mb-2 block">
                         {tx.emailLabel} <span className="text-[#AAA] font-normal">({tx.modelOptional})</span>
                       </label>
                       <input type="email" placeholder={tx.emailPlaceholder} value={form.email} onChange={(e) => update("email", e.target.value)}
-                        className="w-full bg-[#F7F7F7] border border-black/08 text-[#0A0A0A] rounded-xl px-5 py-4 text-sm placeholder:text-[#CCC] focus:outline-none focus:border-[#E31837]/50 transition-colors" />
+                        className="w-full bg-[#F7F7F7] border border-black/08 text-[#0A0A0A] rounded-xl px-5 py-4 text-sm placeholder:text-[#CCC] focus:outline-none focus:border-[#F05A22]/50 transition-colors" />
                     </div>
 
                     <motion.button
@@ -302,7 +302,7 @@ export function BookingForm() {
                       disabled={!canSubmit || loading}
                       whileHover={{ scale: canSubmit ? 1.01 : 1 }}
                       whileTap={{ scale: canSubmit ? 0.98 : 1 }}
-                      className="flex items-center justify-center gap-2 bg-[#E31837] disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[#FF3355] text-white font-bold py-4 rounded-2xl transition-all text-sm mt-1"
+                      className="flex items-center justify-center gap-2 bg-[#F05A22] disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[#FF7040] text-white font-bold py-4 rounded-2xl transition-all text-sm mt-1"
                     >
                       {loading ? tx.sending : <><MessageCircle className="w-4 h-4" /> {tx.submit}</>}
                     </motion.button>

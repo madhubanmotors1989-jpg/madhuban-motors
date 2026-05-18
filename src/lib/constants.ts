@@ -6,7 +6,8 @@ export const SITE = {
   phone2: "+919718373751",
   whatsapp: "+919911443751",
   email: "madhubanmotors1989@gmail.com",
-  address: "Shop No. 8, 8A, Bhatiya Building, New Gandhi Nagar, Model Town, Ghaziabad, UP 201001",
+  address: "Shop No. 8 & 8A, Bhatia Building, Model Town, GT Road, Near Opulent Mall, Ghaziabad, UP",
+  gst: "09AFUPP2848A1Z4",
   mapUrl: "https://maps.app.goo.gl/aDp2hGhJiAV9x17RA",
   mapEmbed:
     "https://maps.google.com/maps?q=Madhuban+Motors+MyTVS+Authorized+Partner+Bhatiya+Building+New+Gandhi+Nagar+Model+Town+Ghaziabad+201001&output=embed",
@@ -20,7 +21,7 @@ export const STATS = [
   { value: 35, suffix: "+", label: "Years of Excellence" },
   { value: 3, suffix: " Lakh+", label: "Cars Served" },
   { value: 4.6, suffix: "★", label: "Google Rating" },
-  { value: 500, suffix: "+", label: "Google Reviews" },
+  { value: 400, suffix: "+", label: "Google Reviews" },
 ];
 
 export const SERVICES = [

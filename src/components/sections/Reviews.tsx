@@ -21,18 +21,18 @@ function ReviewCard({ review }: { review: typeof REVIEWS[0] }) {
       <div className="flex items-start justify-between">
         <div className="flex gap-0.5">
           {[1, 2, 3, 4, 5].map((s) => (
-            <Star key={s} className={`w-3.5 h-3.5 ${s <= review.rating ? "fill-[#E31837] text-[#E31837]" : "fill-black/08 text-black/08"}`} />
+            <Star key={s} className={`w-3.5 h-3.5 ${s <= review.rating ? "fill-[#F05A22] text-[#F05A22]" : "fill-black/08 text-black/08"}`} />
           ))}
         </div>
-        <span className="text-[#E31837]/20 font-black text-4xl leading-none -mt-1 select-none">"</span>
+        <span className="text-[#F05A22]/20 font-black text-4xl leading-none -mt-1 select-none">"</span>
       </div>
       <p className="text-[#555] text-sm leading-relaxed flex-1">{review.text}</p>
       <div className="flex items-center gap-2.5 pt-3 border-t border-black/05">
-        <div className="w-7 h-7 rounded-full bg-[#E31837] flex items-center justify-center flex-shrink-0">
+        <div className="w-7 h-7 rounded-full bg-[#F05A22] flex items-center justify-center flex-shrink-0">
           <span className="text-white text-[10px] font-bold">{review.initials}</span>
         </div>
         <div>
-          <p className="text-[#0A0A0A] font-semibold text-xs">{review.name}</p>
+          <p className="text-[#0A1628] font-semibold text-xs">{review.name}</p>
           <p className="text-[#AAA] text-[11px]">{review.service} · {review.date}</p>
         </div>
       </div>
@@ -45,18 +45,18 @@ export function Reviews() {
   const row2 = [...REVIEWS, ...REVIEWS].reverse();
 
   return (
-    <section className="py-24 md:py-32 bg-[#F5F5F5] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 mb-14">
+    <section className="py-28 md:py-36 bg-[#F5F5F5] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 mb-16">
         <FadeUp>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-8 h-px bg-[#E31837]" />
-                <span className="text-[#E31837] text-xs font-semibold tracking-[0.3em] uppercase">Google Reviews</span>
+                <div className="w-8 h-px bg-[#F05A22]" />
+                <span className="text-[#F05A22] text-xs font-semibold tracking-[0.3em] uppercase">Google Reviews</span>
               </div>
               <h2
-                className="text-5xl md:text-6xl font-black tracking-tight text-[#0A0A0A]"
-                style={{ fontFamily: "var(--font-syne)", letterSpacing: "-0.03em" }}
+                className="text-5xl md:text-6xl font-black tracking-tight text-[#0A1628]"
+                style={{ fontFamily: "var(--font-syne)", letterSpacing: "-0.02em" }}
               >
                 Real people.
                 <br />
@@ -66,12 +66,12 @@ export function Reviews() {
             <div className="flex flex-col items-start md:items-end gap-3">
               <div className="flex items-center gap-2">
                 {[1,2,3,4,5].map((s) => (
-                  <Star key={s} className={`w-5 h-5 ${s <= 4 ? "fill-[#E31837] text-[#E31837]" : "fill-[#E31837]/30 text-[#E31837]/30"}`} />
+                  <Star key={s} className={`w-5 h-5 ${s <= 4 ? "fill-[#F05A22] text-[#F05A22]" : "fill-[#F05A22]/30 text-[#F05A22]/30"}`} />
                 ))}
-                <span className="text-[#0A0A0A] font-black text-2xl ml-1" style={{ fontFamily: "var(--font-syne)" }}>4.6</span>
+                <span className="text-[#0A1628] font-black text-2xl ml-1" style={{ fontFamily: "var(--font-syne)" }}>4.6</span>
               </div>
-              <p className="text-[#AAA] text-sm">500+ reviews on Google Maps</p>
-              <a href={SITE.googleReviews} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-[#E31837] text-sm hover:text-[#FF3355] transition-colors">
+              <p className="text-[#AAA] text-sm">400+ reviews on Google Maps</p>
+              <a href={SITE.googleReviews} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-[#F05A22] text-sm hover:text-[#FF7040] transition-colors">
                 See all reviews <ExternalLink className="w-3.5 h-3.5" />
               </a>
             </div>
@@ -105,14 +105,14 @@ export function Reviews() {
         </motion.div>
       </div>
 
-      <FadeUp delay={0.2} className="mt-12 flex justify-center">
+      <FadeUp delay={0.2} className="mt-14 flex justify-center">
         <a
           href={SITE.googleReviews}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-[#0A0A0A] hover:bg-[#E31837] text-white text-sm font-semibold px-8 py-3.5 rounded-full transition-colors duration-300"
+          className="inline-flex items-center gap-2 bg-[#0A1628] hover:bg-[#F05A22] text-white text-sm font-semibold px-8 py-3.5 rounded-full transition-colors duration-300"
         >
-          <ExternalLink className="w-4 h-4" /> Read all 500+ reviews on Google
+          <ExternalLink className="w-4 h-4" /> Read all 400+ reviews on Google
         </a>
       </FadeUp>
     </section>

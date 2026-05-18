@@ -28,7 +28,7 @@ export function Navbar() {
   return (
     <>
       {/* Top accent bar */}
-      <div className="w-full bg-[#E31837] py-1.5 text-center text-xs font-medium text-white tracking-wide hidden md:block">
+      <div className="w-full bg-[#F05A22] py-1.5 text-center text-xs font-medium text-white tracking-wide hidden md:block">
         {lang === "hi"
           ? `MyTVS Authorized · गाज़ियाबाद · ${SITE.hours}`
           : `MyTVS Authorized Partner · Ghaziabad · ${SITE.hours}`}
@@ -73,8 +73,8 @@ export function Navbar() {
               )}
               aria-label="Toggle language"
             >
-              <span className={cn("px-2.5 py-1 transition-colors", lang === "en" ? "bg-[#E31837] text-white font-semibold" : scrolled ? "text-[#888]" : "text-white/50")}>EN</span>
-              <span className={cn("px-2.5 py-1 transition-colors", lang === "hi" ? "bg-[#E31837] text-white font-semibold" : scrolled ? "text-[#888]" : "text-white/50")}>हिं</span>
+              <span className={cn("px-2.5 py-1 transition-colors", lang === "en" ? "bg-[#F05A22] text-white font-semibold" : scrolled ? "text-[#888]" : "text-white/50")}>EN</span>
+              <span className={cn("px-2.5 py-1 transition-colors", lang === "hi" ? "bg-[#F05A22] text-white font-semibold" : scrolled ? "text-[#888]" : "text-white/50")}>हिं</span>
             </button>
             <a
               href={`tel:${SITE.phone}`}
@@ -86,7 +86,7 @@ export function Navbar() {
               href={waLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-[#E31837] hover:bg-[#FF3355] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
+              className="flex items-center gap-2 bg-[#F05A22] hover:bg-[#FF7040] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
             >
               <MessageCircle className="w-4 h-4" /> {lang === "hi" ? "बुक करें" : "Book Now"}
             </a>
@@ -95,8 +95,8 @@ export function Navbar() {
           {/* Mobile */}
           <div className="md:hidden flex items-center gap-3">
             <button onClick={toggle} className={cn("flex items-center text-xs border rounded-full overflow-hidden", scrolled ? "border-black/15" : "border-white/25")}>
-              <span className={cn("px-2 py-0.5", lang === "en" ? "bg-[#E31837] text-white font-semibold" : scrolled ? "text-[#888]" : "text-white/50")}>EN</span>
-              <span className={cn("px-2 py-0.5", lang === "hi" ? "bg-[#E31837] text-white font-semibold" : scrolled ? "text-[#888]" : "text-white/50")}>हिं</span>
+              <span className={cn("px-2 py-0.5", lang === "en" ? "bg-[#F05A22] text-white font-semibold" : scrolled ? "text-[#888]" : "text-white/50")}>EN</span>
+              <span className={cn("px-2 py-0.5", lang === "hi" ? "bg-[#F05A22] text-white font-semibold" : scrolled ? "text-[#888]" : "text-white/50")}>हिं</span>
             </button>
             <button
               className={cn("p-2", scrolled ? "text-[#0A0A0A]" : "text-white")}
@@ -124,7 +124,7 @@ export function Navbar() {
               <a href={`tel:${SITE.phone}`} className="flex-1 text-center border border-black/15 text-[#0A0A0A] text-sm py-3 rounded-xl">
                 {lang === "hi" ? "कॉल करें" : "Call Now"}
               </a>
-              <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex-1 text-center bg-[#E31837] text-white text-sm font-semibold py-3 rounded-xl">
+              <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex-1 text-center bg-[#F05A22] text-white text-sm font-semibold py-3 rounded-xl">
                 WhatsApp
               </a>
             </div>

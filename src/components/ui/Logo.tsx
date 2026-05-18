@@ -2,7 +2,7 @@
 import Link from "next/link";
 
 export function Logo({ dark = false }: { dark?: boolean }) {
-  const color = dark ? "#0A0A0A" : "#FFFFFF";
+  const color = dark ? "#0A1628" : "#FFFFFF";
 
   return (
     <Link href="/" className="flex flex-col leading-none select-none">
@@ -40,7 +40,7 @@ export function Logo({ dark = false }: { dark?: boolean }) {
       <span
         className="font-semibold uppercase"
         style={{
-          color: "#E31837",
+          color: "#F05A22",
           fontSize: "0.5rem",
           letterSpacing: "0.5em",
           marginTop: "5px",
