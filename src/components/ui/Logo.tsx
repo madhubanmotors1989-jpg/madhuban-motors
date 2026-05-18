@@ -3,29 +3,39 @@ import Link from "next/link";
 
 interface LogoProps {
   dark?: boolean;
-  size?: "sm" | "md" | "lg";
 }
 
-export function Logo({ dark = false, size = "md" }: LogoProps) {
-  const textColor = dark ? "#0A0A0A" : "#FFFFFF";
-  const sizes = { sm: "text-lg", md: "text-xl", lg: "text-3xl" };
+export function Logo({ dark = false }: LogoProps) {
+  const nameColor = dark ? "#0A0A0A" : "#FFFFFF";
 
   return (
-    <Link href="/" className="flex flex-col leading-none select-none">
+    <Link href="/" className="flex flex-col leading-none select-none group">
       <div
-        className={`${sizes[size]} font-bold tracking-tight flex items-center`}
-        style={{ fontFamily: "var(--font-syne)", color: textColor, letterSpacing: "-0.02em" }}
+        className="flex items-baseline font-bold"
+        style={{
+          fontFamily: "var(--font-syne)",
+          color: nameColor,
+          letterSpacing: "-0.025em",
+          fontSize: "1.6rem",
+          lineHeight: 1,
+          transition: "color 0.3s",
+        }}
       >
         <span>MADHU</span>
         <span style={{ display: "inline-block", transform: "scaleX(-1)" }}>B</span>
         <span>AN</span>
       </div>
-      <div
-        className="text-[9px] tracking-[0.35em] uppercase mt-0.5"
-        style={{ color: "#E31837" }}
+      <span
+        className="font-bold tracking-[0.4em] uppercase"
+        style={{
+          fontSize: "0.6rem",
+          letterSpacing: "0.4em",
+          color: "#E31837",
+          marginTop: "3px",
+        }}
       >
-        Motors · Est. 1989
-      </div>
+        MOTORS · EST. 1989
+      </span>
     </Link>
   );
 }

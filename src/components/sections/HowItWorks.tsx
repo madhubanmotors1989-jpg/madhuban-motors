@@ -14,7 +14,7 @@ export function HowItWorks() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="process" className="py-32 md:py-44 bg-[#0A0A0A]">
+    <section id="process" className="py-20 md:py-28 bg-[#0A0A0A]">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <FadeUp className="mb-20">
           <div className="flex items-center gap-3 mb-6">

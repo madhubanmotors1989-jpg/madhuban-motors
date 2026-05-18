@@ -25,7 +25,7 @@ export function Testimonials() {
   const doubled = [...TESTIMONIALS, ...TESTIMONIALS];
 
   return (
-    <section className="py-32 md:py-44 overflow-hidden bg-[#F7F7F7]">
+    <section className="py-20 md:py-28 overflow-hidden bg-[#F7F7F7]">
       <div className="max-w-7xl mx-auto px-6 md:px-12 mb-16">
         <FadeUp>
           <div className="flex items-center gap-3 mb-6">

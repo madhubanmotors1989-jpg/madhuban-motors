@@ -61,9 +61,9 @@ export function BookingForm() {
   const canSubmit = form.name && form.phone && form.car;
 
   return (
-    <section id="book" className="py-32 md:py-44 bg-white">
+    <section id="book" className="py-20 md:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
 
           {/* Left */}
           <FadeUp>
@@ -78,16 +78,13 @@ export function BookingForm() {
               <br />
               <span className="text-gradient">{tx.bookH2}</span>
             </h2>
-            <p className="text-[#555555] text-lg mb-2">{tx.bookSub}</p>
-            <p className="text-[#888888] text-sm leading-relaxed mb-10 max-w-sm">
-              {tx.bookDesc}
-            </p>
+            <p className="text-[#555555] text-lg mb-10">{tx.bookSub}</p>
 
-            <div className="flex flex-col gap-5 mb-10">
+            <div className="flex flex-col gap-4 mb-10">
               {tx.bookPoints.map((point) => (
-                <div key={point} className="flex items-start gap-3 text-[#555555] text-sm">
-                  <div className="w-5 h-5 rounded-full bg-[#E31837]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CheckCircle className="w-3 h-3 text-[#E31837]" />
+                <div key={point} className="flex items-start gap-3 text-[#666] text-sm">
+                  <div className="w-4 h-4 rounded-full bg-[#E31837]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <CheckCircle className="w-2.5 h-2.5 text-[#E31837]" />
                   </div>
                   {point}
                 </div>

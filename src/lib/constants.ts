@@ -20,7 +20,7 @@ export const STATS = [
   { value: 35, suffix: "+", label: "Years of Excellence" },
   { value: 3, suffix: " Lakh+", label: "Cars Served" },
   { value: 4.6, suffix: "★", label: "Google Rating" },
-  { value: 8, suffix: "", label: "Services Offered" },
+  { value: 500, suffix: "+", label: "Google Reviews" },
 ];
 
 export const SERVICES = [

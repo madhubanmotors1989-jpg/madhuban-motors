@@ -62,7 +62,7 @@ function StarRow({ rating }: { rating: number }) {
 
 export function Reviews() {
   return (
-    <section className="py-32 md:py-44 bg-[#0A0A0A] overflow-hidden">
+    <section className="py-20 md:py-28 bg-[#0A0A0A] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
 
         <FadeUp className="mb-16">

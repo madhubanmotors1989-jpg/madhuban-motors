@@ -17,9 +17,9 @@ export function About() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="about" className="py-32 md:py-44 bg-white">
+    <section id="about" className="py-20 md:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
 
           {/* Left */}
           <div>
@@ -46,8 +46,8 @@ export function About() {
               <div className="grid grid-cols-3 gap-8 mb-14 pb-14 border-b border-black/08">
                 {[
                   { value: 35, suffix: "+", label: "Years" },
-                  { value: 3, suffix: "L+", label: "Cars" },
-                  { value: 8, suffix: "", label: "Services" },
+                  { value: 3, suffix: "L+", label: "Cars Served" },
+                  { value: 500, suffix: "+", label: "Reviews" },
                 ].map((s) => (
                   <div key={s.label} className="flex flex-col gap-2">
                     <span className="text-4xl font-bold text-[#0A0A0A]" style={{ fontFamily: "var(--font-syne)" }}>
